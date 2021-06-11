@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-06-2021 a las 23:19:46
+-- Tiempo de generación: 12-06-2021 a las 01:42:56
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -47,7 +47,10 @@ INSERT INTO `changelogs` (`id`, `tabla_afectada`, `id_afectado`, `id_empleado`, 
 (2, 'pedidos', 3, 3, 'Modificar', 'pagado', '2021-06-11 17:09:00', NULL),
 (3, 'pedidos', 3, 3, 'Modificar', 'pagado', '2021-06-11 17:30:19', NULL),
 (4, 'pedidos', 0, 3, 'Obtener datos', 'Datos de todos los pedidos', '2021-06-11 17:54:40', NULL),
-(5, 'pedidos', 3, 3, 'Eliminar', 'Se realizo el softdelete de la fila', '2021-06-11 18:17:20', NULL);
+(5, 'pedidos', 3, 3, 'Eliminar', 'Se realizo el softdelete de la fila', '2021-06-11 18:17:20', NULL),
+(6, 'productos', 5, 3, 'Cargar', 'Stock: 50', '2021-06-11 19:34:34', NULL),
+(7, 'productos', 0, 3, 'Obtener datos', 'Datos de todos los producto', '2021-06-11 19:35:18', NULL),
+(8, 'empleados', 0, 3, 'Obtener datos', 'Datos de todos los empleados', '2021-06-11 19:53:58', NULL);
 
 -- --------------------------------------------------------
 
@@ -172,7 +175,9 @@ CREATE TABLE `productos` (
 INSERT INTO `productos` (`id`, `nombre`, `precio`, `stock`, `tipo`, `fecha_de_baja`) VALUES
 (1, 'Papas Fritas', '8', 288, 'comida', NULL),
 (2, 'Coca Cola', '11', 27, 'bebida', NULL),
-(3, 'Sprite', '6', 200, 'bebida', '2021-06-05');
+(3, 'Sprite', '6', 200, 'bebida', '2021-06-05'),
+(4, 'Hamburguesa', '21', 50, 'comida', NULL),
+(5, 'Hamburguesa Vegana', '21', 50, 'comida', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -222,7 +227,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `changelogs`
 --
 ALTER TABLE `changelogs`
-  MODIFY `id` int(18) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(18) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
@@ -252,7 +257,7 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(18) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(18) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
